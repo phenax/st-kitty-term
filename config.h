@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "./xresources.h"
+
 /*
  * appearance
  *
@@ -104,32 +106,32 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	Xres__color0,
+	Xres__color1,
+	Xres__color2,
+	Xres__color3,
+	Xres__color4,
+	Xres__color5,
+	Xres__color6,
+	Xres__color7,
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	Xres__color8,
+	Xres__color9,
+	Xres__color10,
+	Xres__color11,
+	Xres__color12,
+	Xres__color13,
+	Xres__color14,
+	Xres__color15,
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	Xres__foreground,
+	Xres__background,
 };
 
 
@@ -237,8 +239,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_F6,          dumpgrstate,    {.i =  0} },
 	{ TERMMOD,              XK_F7,          unloadimages,   {.i =  0} },
 	{ TERMMOD,              XK_F8,          toggleimages,   {.i =  0} },
-	{ TERMMOD,              XK_Up,     kscrollup,      {.i = -1} },
-	{ TERMMOD,              XK_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_Up,          kscrollup,      {.i = -1} },
+	{ TERMMOD,              XK_Down,        kscrolldown,    {.i = -1} },
 };
 
 /*

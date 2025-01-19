@@ -6,7 +6,13 @@
     let
       nixp = import nixpkgs { system = "x86_64-linux"; };
       pkgs = nixp.pkgs;
-      buildInputs = with pkgs; [ xorg.libX11 xorg.libXft fontconfig ncurses ];
+      buildInputs = with pkgs; [
+        xorg.libX11
+        xorg.libXft
+        fontconfig
+        ncurses
+        imlib2
+      ];
     in {
       devShells.x86_64-linux.default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [ pkg-config ];

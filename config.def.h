@@ -15,7 +15,7 @@ static int borderpx = 2;
  * 50 means center, 0 means flush left/top, 100 means flush right/bottom.
  */
 static int anysize_halign = 50;
-static int anysize_valign = 20;
+static int anysize_valign = 50;
 
 /*
  * What program is execed by st depends of these precedence rules:
